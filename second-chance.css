@@ -1,0 +1,63 @@
+/* V41.1: one restrained type scale; full-width cinematic endings. */
+:root{--sc-title:24px;--sc-section:20px;--sc-body:16px;--sc-meta:16px}
+body{font-size:var(--sc-body)}
+.escape-shell :is(p,.intel-copy,.mission-copy,.decision-note,.objective-how,.decision-reason,.alien-result-card p),.ethics-content p,.passage-copy p{font-size:var(--sc-body)!important;line-height:1.4!important;letter-spacing:normal!important}
+.escape-shell :is(h1,h2,.mission-title,.intel-title,.quiz-verdict),.ethics-content h1,.passage-copy h1{font-size:var(--sc-title)!important;line-height:1.2!important;letter-spacing:.025em!important}
+.escape-shell :is(h3,h4,.objective-command h2,.alien-conflict-title b){font-size:var(--sc-section)!important;line-height:1.25!important}
+.escape-shell :is(small,.panel-kicker,.objective-label,.rlabel,.crew-role,.mission-step,.resource-change-row,.alien-action small,.daily-action small,.action-btn small,.surface-action small,.objective-how b,.objective-target,.voice-sync),#scr-prelude small{font-size:var(--sc-meta)!important;line-height:1.35!important;letter-spacing:.02em!important}
+.escape-shell :is(button,.action-btn,.daily-action,.surface-action),.ethics-button,#scr-prelude button{font-size:var(--sc-body)!important;line-height:1.3!important;white-space:normal!important}
+.escape-shell :is(.action-btn,.daily-action,.surface-action,.alien-action){height:auto!important;min-height:44px;padding:9px 12px!important}
+.escape-shell :is(.action-btn small,.daily-action small,.surface-action small){position:static!important;display:block!important;margin-top:5px!important;max-width:none!important}
+.escape-shell .objective-command{padding:10px!important;margin:0 0 8px!important}
+.escape-shell .objective-command h2{margin:6px 0!important}
+.escape-shell .objective-how{padding:8px!important}
+.escape-shell .objective-target,.escape-shell .voice-sync{display:none!important}
+.escape-shell .mission-steps{gap:6px!important}
+.escape-shell .mission-step{padding:6px!important}
+.escape-shell .central-event-overlay{padding:14px!important;max-height:100%!important}
+.escape-shell .central-gameplay-actions,.escape-shell .daily-actions,.escape-shell .v37-unique-tests{gap:10px!important}
+.escape-shell .resource-change-panel{margin:6px 0!important;padding:8px!important}
+.escape-shell .resource-change-next{display:none!important}
+.escape-shell .alien-result-card{width:min(760px,96%)!important;padding:16px!important}
+.escape-shell .alien-action-dock{padding:10px!important}
+.escape-shell .alien-status-row{margin-bottom:180px!important}
+.escape-shell .alien-brief{flex-wrap:wrap;gap:6px!important}
+.escape-shell .resource-pill .rvalue{font-size:20px!important;font-variant-numeric:tabular-nums}
+.archive-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.archive-hint{font-size:16px!important;line-height:1.4!important}
+.sc-film{position:fixed;inset:0;z-index:10000;background:#06121c;color:#edf8fa;display:grid;grid-template-rows:minmax(180px,1fr) auto;font-family:var(--font-ui,system-ui);isolation:isolate}
+.sc-image{position:relative;overflow:hidden;min-height:0;background:#030910}
+.sc-image>img{display:block;width:100%;height:100%;object-fit:cover;animation:scDrift 20s ease-out both;object-position:center 45%}
+.sc-image.dark>img{animation:scDark 5s ease forwards}
+.sc-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,#06121c,transparent 28%,transparent 80%,#06121c80)}
+.sc-kicker{position:absolute;left:5%;top:28px;font-size:16px;letter-spacing:.09em;background:#04121cd9;padding:10px 14px;border-left:2px solid #83d0d9}
+.sc-caption{position:relative;width:min(1120px,92%);margin:auto;padding:12px 0 24px;display:grid;grid-template-columns:1fr auto;gap:8px 30px;align-items:center}
+.sc-caption .sc-step{grid-column:1/-1;color:#89b2c2;font-size:16px;letter-spacing:.07em}
+.sc-caption h2{grid-column:1;font-size:26px!important;line-height:1.2;margin:0!important;color:#effbff}
+.sc-caption p{grid-column:1;font-size:17px!important;line-height:1.5;max-width:820px;margin:0!important;color:#c7d9df}
+.sc-caption button{grid-column:2;grid-row:2/4;align-self:center;min-height:52px;max-width:260px;padding:12px 22px!important;font:700 16px/1.35 var(--font-ui,system-ui)!important;background:#153c49;border:1px solid #8cdae2;border-radius:6px;cursor:pointer;color:#effcff;white-space:normal}
+.sc-caption button:hover{background:#215263;box-shadow:0 0 24px #75dfe426}
+.sc-caption button:focus-visible{outline:3px solid #f4d79c;outline-offset:4px}
+.sc-resources{grid-column:1/-1;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:6px}
+.sc-resources span{font-size:16px;color:#94b6c1;padding:9px 12px;border:1px solid #385561;border-radius:6px}
+.sc-resources b{display:block;font-size:18px;color:#f0f8f9;font-variant-numeric:tabular-nums;margin-top:3px}
+.sc-caption .sc-review{grid-column:1/-1;font-size:16px!important;color:#9fbdc9}
+.sc-crew{position:absolute;bottom:25px;left:5%;display:flex;gap:12px}
+.sc-crew img{height:clamp(100px,22vh,190px);width:clamp(80px,11vw,145px);object-fit:contain;background:#06121c9e;border:1px solid #7396a5;border-radius:5px}
+.sc-signal{display:none;position:absolute;left:50%;top:50%;width:180px;height:180px;transform:translate(-50%,-50%);pointer-events:none}
+.signal .sc-signal{display:block}.sc-signal i{position:absolute;inset:0;border:1px solid #97f0ef;border-radius:50%;animation:scWave 3s linear infinite}.sc-signal i:nth-child(2){animation-delay:1s}.sc-signal i:nth-child(3){animation-delay:2s}
+.renewal:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(130deg,#ffce8820,transparent 50%);animation:scSun 4s ease both}
+@keyframes scDrift{from{transform:scale(1.01)}to{transform:scale(1.045)}}
+@keyframes scDark{from{filter:brightness(.85)}to{filter:brightness(.3) saturate(.5)}}
+@keyframes scWave{0%{transform:scale(.25);opacity:0}20%{opacity:.9}100%{transform:scale(2.2);opacity:0}}
+@keyframes scSun{from{opacity:0}to{opacity:1}}
+@media(max-height:800px){.sc-caption{padding:10px 0 16px;gap:6px 24px}.sc-caption h2{font-size:24px!important}.sc-caption p{font-size:16px!important}.sc-resources span{padding:6px 10px}.escape-shell .mission-panel,.escape-shell .intel-panel{padding:8px!important}}
+@media(max-width:800px){.sc-caption{grid-template-columns:1fr;width:92%;gap:8px}.sc-caption button{grid-column:1;grid-row:auto;justify-self:start;min-height:44px;max-width:none}.sc-kicker{top:16px;left:4%;right:4%;font-size:16px}.sc-resources{grid-template-columns:repeat(2,1fr);gap:6px}.sc-caption h2{font-size:22px!important}.sc-film{grid-template-rows:minmax(140px,1fr) auto}}
+@media(prefers-reduced-motion:reduce){.sc-film *{animation:none!important;transition:none!important}}
+#scr-prelude :is(.core-name,.core-title,.core-card h3){font-size:20px!important;line-height:1.25!important}
+#scr-prelude :is(.core-desc,.core-tooltip,.core-note,.core-foot),.passenger-profile{font-size:16px!important;line-height:1.4!important}
+.escape-shell .v11-log-entry{font-size:16px!important;line-height:1.4!important}
+.escape-shell .v11-log-entry:nth-last-child(n+5){display:none!important}
+.escape-shell .journey-location b{font-size:20px!important}
+.escape-shell .journey-location span,.escape-shell .journey-log-title,.escape-shell .v11-log-current{font-size:16px!important;line-height:1.4!important}
+@media(min-width:1100px){.escape-main{grid-template-columns:195px minmax(0,1fr) 265px!important}.escape-shell .objective-how{font-size:16px!important}}

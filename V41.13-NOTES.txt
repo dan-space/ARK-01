@@ -1,0 +1,12 @@
+ARK-01 V41.13 — based on V41.12
+
+Extract all files, then open index.html.
+Title screen waits for BEGIN ARK-01 EVACUATION.
+Named male/female voices are shared by game, assembly and ending.
+Speech uses installed/browser English voices; if a requested voice is unavailable, captions remain available instead of assigning the wrong gender.
+Append ?voiceDebug to index.html to log voice selection.
+Assembly completes in 5.7 seconds, independent of speech.
+Old Earth starts automatically and moves to the final summary after its closing music.
+
+Validation: JavaScript syntax; shuffled Chrome/Edge voice-list fixtures; delayed/missing voice lists; assembly timer and boarding state; automatic eight-turn ending and summary.
+Actual Edge/Chrome listening and visual checks were not possible: only a remote Chrome was available, and it blocked the local game URL.

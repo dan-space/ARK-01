@@ -1,0 +1,2 @@
+V41.17: V41.14 layout preserved. Module voice loading is retried for up to 3 seconds, speech startup timeout increased from 1.2 to 6 seconds, first narration requested directly from START. No voice-name/rate/pitch changes on Edge. Chrome general auto narration is female; technical prompts are male; named cast roles override narration classification.
+Validation uses mocked browser speech and timers, not live listening.

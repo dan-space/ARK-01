@@ -1,0 +1,8 @@
+ARK-01 V41.14
+Based on V41.13, preserving the V41.12 game.
+Restores V41.12 browser voice selection. Voices depend on installed/browser voices.
+Title opening chime plays once, on load when allowed or on first interaction. SOUND OFF is respected.
+Module installation flashes on actual speech start. Unavailable speech cancels after 1.2 seconds and installation proceeds visually.
+SKIP is available from initial load; skip/replay cancels stale speech and timers.
+Validated with mocked speech/timer state tests and JavaScript syntax checks. Actual browser listening remains unverified.
+Extract the entire ZIP and open index.html.

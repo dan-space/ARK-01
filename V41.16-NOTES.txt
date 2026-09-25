@@ -1,0 +1,5 @@
+ARK-01 V41.16
+Base: V41.14, NOT V41.15. No CSS, layout, artwork, timing or gameplay changes.
+Edge keeps V41.14 voice selection and tuning. Chrome resolves named English male/female voices, with explicit Elena=female and Alex/Marcus=male. Auto narration uses four male turns followed by one female turn.
+If the requested gender is unavailable, retain captions rather than selecting an incorrect default voice. Voices still depend on browser/OS availability.
+Validation: voice fixtures, character routing, syntax and byte comparison of all layout/style files. Actual browser audio not verified.
