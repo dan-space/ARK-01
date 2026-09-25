@@ -1,0 +1,207 @@
+/* V41.2: readable copy, compact hierarchy and space reserved for commands. */
+.ethics-content h1,.passage-copy h1{white-space:nowrap!important;font-size:28px!important;line-height:1.2!important;letter-spacing:0!important}
+.ethics-content{width:min(850px,88vw)!important;max-width:850px!important}
+.ethics-content .archive-tile,.ending-archive-mini .archive-tile{font-size:19px!important;line-height:1.3!important}
+.ethics-overlay :is(.ethics-kicker,.crisis-line,.archive-count,.archive-hint,.difficulty-button,.ethics-brief,.profile-note,.ticket-effect,.profile-row,.profile-row b){font-size:16px!important;line-height:1.4!important;letter-spacing:0!important}
+.ethics-content p,.passage-copy p{font-size:18px!important;line-height:1.45!important}
+.passage-shell{width:min(1440px,94vw)!important;gap:30px!important;grid-template-columns:minmax(340px,.85fr) minmax(540px,1.15fr)!important}
+.passage-console{grid-template-columns:minmax(175px,.38fr) minmax(320px,1fr)!important;gap:20px!important;padding:20px!important}
+.price-readout,#priceReadout{font-size:28px!important;line-height:1.2!important;white-space:nowrap;letter-spacing:0!important}
+.price-range{display:flex!important;justify-content:space-between!important;width:100%!important;gap:18px!important}
+.price-range span{font-size:20px!important;line-height:1.3!important;font-weight:700!important}
+.profile-row{padding:6px 0!important;gap:12px!important}
+.profile-note{margin:8px 0!important}.ticket-effects{gap:8px!important}.ticket-effect{padding:9px!important}
+#btnLaunch{width:max-content!important;min-width:370px!important;max-width:none!important;white-space:nowrap!important;padding:14px 24px!important;font-size:18px!important;line-height:1.25!important;flex-shrink:0!important;box-sizing:border-box!important}
+.prelude-footer{gap:16px!important;flex-wrap:wrap!important}
+.crew-intro-head h2,.core-crew-card h3{font-size:24px!important;line-height:1.2!important}
+.crew-intro-head p,.core-crew-card p,.core-crew-card b,.crew-intro-head .ethics-kicker{font-size:18px!important;line-height:1.4!important;letter-spacing:0!important}
+.crew-intro-head{padding:0!important;gap:20px!important;margin-bottom:12px!important}
+.core-crew-grid{gap:18px!important;min-height:0!important}
+.core-crew-card img{height:clamp(210px,43vh,480px)!important;object-fit:contain!important}
+.core-crew-card>div{padding:12px 16px!important}
+.core-crew-card h3{margin:5px 0!important}.core-crew-card p{margin:4px 0!important}
+.crew-intro-footer{margin-top:12px!important;padding:0!important}
+.crew-intro-footer button{font-size:18px!important;white-space:nowrap!important}
+body.preflight-mode .escape-shell :is(p,span,small,b,button,.panel-kicker,.ship-caption,.objective-how,.v11-log-entry,.v36-module-step,.v36-auto-head){font-size:16px!important;line-height:1.35!important;letter-spacing:0!important}
+body.preflight-mode .ship-caption b{font-size:20px!important}
+body.preflight-mode .ship-caption span:empty{display:none!important}
+body.preflight-mode .part-selected-hud,body.preflight-mode .ship-tip{display:none!important}
+.boarding-confirm-dock{padding:12px 18px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:18px!important}
+.boarding-confirm-dock p{margin:0!important;font-size:18px!important}
+.install-confirm{max-width:85%!important;padding:10px 18px!important}
+.install-confirm b{font-size:18px!important}.install-confirm span{display:none!important}
+.manual-cinematic-controls{position:absolute;z-index:1500;bottom:5%;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:20px;padding:12px;background:#071523dc;border:1px solid #537b90;border-radius:8px}
+.manual-cinematic-controls button{position:static!important;transform:none!important;font-size:20px!important;line-height:1.3!important;min-height:48px!important;padding:12px 24px!important;background:#12384d;color:#ecf9ff;border:1px solid #719dae;border-radius:5px;white-space:nowrap;cursor:pointer}
+.manual-cinematic-controls button:first-child{background:#0a1c2a;font-size:19px!important}
+.mass-boarding .boarding-copy,.departure-copy{bottom:auto!important;top:12%!important;max-width:80%!important}
+.mass-boarding .boarding-counter{bottom:25%!important}
+.boarding-copy :is(p,.panel-kicker),.departure-copy :is(span,p){font-size:18px!important;line-height:1.4!important}
+#departPlanet{white-space:nowrap!important;width:max-content!important;max-width:none!important;font-size:16px!important;padding:12px 14px!important}
+@media(max-width:1100px){.passage-shell{grid-template-columns:310px 1fr!important;gap:16px!important}.passage-console{grid-template-columns:165px 1fr!important;padding:12px!important;gap:12px!important}.ethics-content h1,.passage-copy h1{font-size:24px!important}.core-crew-card p,.core-crew-card b{font-size:17px!important}}
+@media(max-height:780px){.ethics-content{top:6%!important}.core-crew-card img{height:37vh!important}.crew-intro-overlay{padding:22px 4vw!important}.passage-shell{padding:18px 0!important}.ethics-brief{margin-top:12px!important;padding:12px!important}.ticket-effect{padding:6px!important}}
+
+/* V41.3: one legible minimum across all runtime screens, including generated cards. */
+:root{--type-body:16px;--type-meta:16px;--type-button:16px;--sc-meta:16px}
+html,body{font-size:16px}
+small,sub,sup,input,select,textarea{font-size:16px;line-height:1.35}
+/* Both cinematic pages share one flow layout. Never position a child independently. */
+#boardingSequence .manual-cinematic-controls,
+#departureCinematic .manual-cinematic-controls{display:grid;grid-template-columns:max-content max-content;column-gap:32px;align-items:center;max-width:calc(100vw - 48px);box-sizing:border-box}
+#boardingSequence .manual-cinematic-controls>button,
+#departureCinematic .manual-cinematic-controls>button{position:static!important;inset:auto!important;transform:none!important;margin:0!important;float:none!important;min-width:112px;justify-self:stretch;box-sizing:border-box}
+/* Enlarged captions occupy their own rows instead of colliding with values. */
+.escape-resources{min-width:0;gap:8px!important}
+.resource-pill.v11-resource{height:auto!important;min-height:66px;min-width:0!important;padding:8px 10px!important;line-height:1.35!important;flex:1 1 0}
+.resource-pill .rlabel{white-space:normal!important;letter-spacing:0!important;line-height:1.3!important}
+.resource-pill .rvalue{line-height:1.3!important}
+.resource-pill.critical::after,.resource-pill.mission-risk::after{position:static!important;display:block!important;grid-column:1/-1;white-space:normal;letter-spacing:0!important;margin-top:3px;line-height:1.3!important}
+body.core-resources-critical .escape-head::after{content:none!important}
+.escape-head{height:auto!important;min-height:78px;gap:12px!important}
+.escape-head-actions{gap:8px!important;flex-wrap:wrap;justify-content:flex-end}
+.escape-shell :is(.cost,.requirement,.crew-state,.status-cell,.target-stat){line-height:1.35!important;letter-spacing:0!important}
+.escape-shell :is(.decision-note,.intel-copy,.v11-log-entry,.objective-how,.action-btn small,.daily-action small,.surface-action small){overflow-wrap:break-word;line-height:1.4!important}
+.escape-shell :is(.daily-action,.surface-action,.action-btn,.alien-action){min-height:48px!important;height:auto!important}
+@media(max-width:650px){
+ #boardingSequence .manual-cinematic-controls,#departureCinematic .manual-cinematic-controls{grid-template-columns:1fr;row-gap:14px;width:min(420px,92vw)}
+ .manual-cinematic-controls button{white-space:normal!important}
+}
+
+/* V41.4: larger open rectangular bust portraits in the live crew strip.
+   Original images are retained; top alignment keeps every face and hairline visible. */
+#simpleCrew{gap:14px;padding:8px 16px 10px;align-items:stretch}
+#simpleCrew .crew-card-simple{width:100%!important;min-width:0!important;min-height:116px!important;box-sizing:border-box;grid-template-columns:108px minmax(0,1fr)!important;grid-template-rows:auto auto;column-gap:14px!important;row-gap:5px!important;padding:6px 12px 6px 6px!important}
+#simpleCrew .crew-face{grid-column:1;grid-row:1/3;align-self:stretch;width:108px!important;height:108px!important;border-radius:0!important;border:0!important;box-shadow:none!important;clip-path:none!important;mask:none!important;background-color:transparent!important;background-repeat:no-repeat!important;background-size:200% auto!important;background-position:center top!important}
+#simpleCrew .crew-face+div{grid-column:2;grid-row:1;align-self:end;min-width:0}
+#simpleCrew .crew-name-simple{font-size:18px!important;line-height:1.3!important}
+#simpleCrew .crew-role-simple{font-size:16px!important;line-height:1.35!important;overflow-wrap:break-word}
+#simpleCrew .crew-state{grid-column:2;grid-row:2;justify-self:start;align-self:start;position:static!important;display:block!important;max-width:100%;box-sizing:border-box;font-size:16px!important}
+@media(max-width:760px){#simpleCrew{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:6px}#simpleCrew .crew-card-simple{grid-template-columns:80px minmax(0,1fr)!important;column-gap:8px!important}#simpleCrew .crew-face{width:80px!important;height:108px!important;background-size:250% auto!important}}
+
+/* V41.5 — independent rows for commands, costs and test guidance. */
+.escape-shell .daily-action{display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-areas:'hint' 'title' 'status' 'detail'!important;row-gap:7px!important;align-content:start!important}
+.escape-shell .daily-action>b{grid-area:title!important;min-width:0;line-height:1.35!important;padding:0!important}
+.escape-shell .daily-action>.cost{position:static!important;inset:auto!important;grid-area:status!important;justify-self:start!important;max-width:100%!important;text-align:left!important;white-space:normal!important;line-height:1.35!important;margin:0!important}
+.escape-shell .daily-action>small{grid-area:detail!important;position:static!important;margin:0!important;line-height:1.4!important}
+.escape-shell .v37-unique-tests .surface-action.unique-test-highlight::before{position:static!important;grid-area:hint!important;justify-self:start!important;margin:0 0 4px!important;line-height:1.35!important;max-width:100%;box-sizing:border-box;letter-spacing:.025em!important}
+.escape-shell .surface-action.done::after,.escape-shell .captain-choice::after{position:static!important;grid-area:hint!important;justify-self:start!important;line-height:1.35!important}
+/* Compact cards are actual drag targets; keep the large bust from V41.4. */
+#simpleCrew{grid-template-columns:repeat(3,minmax(0,350px))!important;justify-content:space-between!important;gap:14px!important}
+#simpleCrew .crew-card-simple{max-width:350px!important;column-gap:10px!important}
+/* Confirmation and command each have a non-overlapping half of the scene. */
+#simpleScene:has(.discovery-confirmed) .central-action-dock{left:auto!important;right:16px!important;bottom:16px!important;transform:none!important;width:44%!important;box-sizing:border-box}
+#simpleScene:has(.discovery-confirmed) .central-action-dock>.promoted-command-stack,
+#simpleScene:has(.discovery-confirmed) .central-action-dock>.action-stack{grid-template-columns:minmax(0,1fr)!important}
+#simpleScene .discovery-confirmed .approach-readout{left:16px!important;right:auto!important;bottom:16px!important;max-width:44%!important;box-sizing:border-box;overflow-wrap:break-word;letter-spacing:.02em!important}
+/* Legacy scale transforms otherwise make 16px text smaller again. */
+.escape-shell .central-action-dock.surface-actions{transform:translateX(-50%)!important;width:min(1080px,96%)!important}
+@media(max-width:760px){#simpleCrew{grid-template-columns:repeat(3,minmax(0,1fr))!important}#simpleScene:has(.discovery-confirmed) .central-action-dock{right:10px!important;bottom:10px!important;width:46%!important}#simpleScene .discovery-confirmed .approach-readout{left:10px!important;max-width:44%!important}}
+/* V41.6 content-sized commands and grouped crew. */
+#simpleCrew{justify-content:center!important;gap:18px!important}
+#simpleScene .central-action-dock{width:min(var(--command-width,664px),96%)!important;box-sizing:border-box;transform:translateX(-50%)!important;left:50%!important;right:auto!important}
+#simpleScene .central-action-dock>.action-stack,#simpleScene .central-action-dock>.daily-actions,#simpleScene .central-action-dock>.promoted-command-stack{grid-template-columns:repeat(var(--command-columns,2),minmax(0,1fr))!important;align-items:stretch}
+#simpleScene .central-action-dock.recovery-dock{width:min(1080px,96%)!important}
+#simpleScene:has(.discovery-confirmed) .central-action-dock{width:min(344px,44%)!important;left:auto!important;right:16px!important;transform:none!important}
+#simpleScene .central-action-dock.balanced-decision{--command-columns:2!important}
+#simpleScene .balanced-decision #departPlanet,#simpleScene .balanced-decision #resourceCheck{width:100%!important;max-width:100%!important;height:100%!important;white-space:normal!important;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center}
+/* Module name belongs in the assembly status list, not across ship artwork. */
+.module-cinematic .puzzle-slot.installed span{display:none!important}
+.module-cinematic .puzzle-slot.installed{background:transparent!important;border:none!important;box-shadow:none!important;pointer-events:none!important}
+@media(max-width:760px){#simpleCrew{gap:8px!important}#simpleScene .central-action-dock{--command-columns:2}}
+
+/* V41.7 — names stay visible; assembly caption has its own left-side space. */
+.module-cinematic .puzzle-slot.installed{overflow:visible!important}
+.module-cinematic .puzzle-slot.installed span{display:block!important;left:50%!important;right:auto!important;bottom:-30px!important;transform:translateX(-50%);width:max-content;max-width:180px;font-size:16px!important;line-height:1.3;padding:4px 8px!important;border-radius:4px}
+#simpleScene .module-cinematic .cinematic-tag{left:14px!important;right:auto!important;top:110px!important;bottom:auto!important;max-width:240px;white-space:normal!important;line-height:1.5!important}
+body.preflight-mode .simple-toast.assembly-toast{top:112px!important;bottom:auto!important;left:50%!important;max-width:560px;z-index:1600;pointer-events:none}
+/* A real two-column choice row, unaffected by inherited command grids. */
+#simpleScene .central-action-dock.mineral-decision{width:min(860px,94%)!important;left:50%!important;right:auto!important;transform:translateX(-50%)!important;padding:16px!important}
+.mineral-choice-pair{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:18px!important;align-items:stretch}
+#simpleScene .mineral-choice-pair #resourceCheck,#simpleScene .mineral-choice-pair #departPlanet{position:static!important;transform:none!important;display:flex!important;flex-direction:column;justify-content:center;gap:10px;min-width:0!important;width:100%!important;max-width:none!important;min-height:112px!important;height:auto!important;margin:0!important;padding:16px!important;white-space:normal!important;line-height:1.4!important;box-sizing:border-box;text-align:left!important;font-size:17px!important}
+.mineral-choice-pair small{display:block;line-height:1.45!important;font-size:16px!important;margin:0!important}
+/* Recovery always wins over the narrow discovery command layout. */
+#simpleScene:has(.discovery-confirmed) .central-action-dock.recovery-dock,#simpleScene .central-action-dock.recovery-dock{left:50%!important;right:auto!important;bottom:14px!important;transform:translateX(-50%)!important;width:min(1040px,94%)!important;padding:12px!important}
+#simpleScene .recovery-dock .recovery-panel{padding:14px!important}
+#simpleScene .recovery-dock .crisis-choice-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}
+#simpleScene .recovery-dock .recovery-option{padding:14px!important;min-height:100px!important;line-height:1.4!important}
+#simpleScene .recovery-dock .expedition-panel{grid-column:1/-1;padding:12px!important}
+#simpleScene .recovery-dock .expedition-crew{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important}
+#simpleScene .recovery-dock .expedition-crew button{padding:12px!important;line-height:1.4!important;white-space:normal!important}
+#simpleScene .recovery-dock .recovery-lock-note{display:none!important}
+@media(max-width:700px){.mineral-choice-pair{gap:10px!important}#simpleScene .recovery-dock .crisis-choice-grid{gap:8px!important}#simpleScene .recovery-dock .recovery-option{padding:8px!important}}
+/* V41.8 measured assembly dock; independent radar HUD. */
+#simpleScene .assembly-safe-dock{left:var(--assembly-x,12px)!important;top:var(--assembly-y,auto)!important;bottom:12px!important;transform:none!important;width:var(--assembly-width,min(490px,48%))!important;height:max-content!important;box-sizing:border-box;padding:12px!important}
+#simpleScene .assembly-safe-dock[style*="--assembly-y"]{bottom:auto!important}
+.assembly-safe-dock .boarding-confirm-dock{margin:0!important;padding:6px!important}
+.assembly-safe-dock .part-tray{margin:0!important}
+.assembly-safe-dock .config-ready,.assembly-safe-dock>.part-tray:has(.config-ready){display:none!important}
+.assembly-safe-dock>span{display:block;line-height:1.4;font-size:16px!important}
+.assembly-safe-dock .boarding-confirm-dock p{margin:6px 0!important}
+.assembly-safe-dock #proceedBoarding{width:100%;min-height:48px!important;white-space:normal!important}
+#simpleScene .signal-readout{top:auto!important;left:50%!important;transform:translateX(-50%)!important;max-width:80%;width:max-content;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;padding:12px 20px;border:1px solid #70cdda;border-radius:8px;background:rgba(2,16,27,.95);color:#edfaff;font:700 20px/1.4 var(--font-ui,system-ui)!important;letter-spacing:.035em!important;box-shadow:0 4px 20px #0009;text-shadow:0 1px 3px #000;pointer-events:none}
+.signal-readout strong{color:#9af0ff;font:inherit}.signal-readout span{font:inherit;font-variant-numeric:tabular-nums;white-space:nowrap}
+/* Keep statistics behind the existing cinematic/summary boundary. */
+.sc-caption .sc-skip{grid-column:2;grid-row:4;justify-self:center;min-height:38px;font-size:16px!important;padding:6px 16px!important;background:transparent;border-color:#52737e}
+.sc-second-chance{display:block;font-size:21px;line-height:1.4;margin-top:5px;animation:sc418Title 1.2s 2.5s both;color:#e6d3a6}
+.sc-atmosphere,.sc-arrival-lights{position:absolute;inset:0;pointer-events:none}
+.sc-arrival-lights{display:none}
+.sc-arrival-lights i{position:absolute;left:calc(24% + var(--n)*12%);bottom:21%;width:4px;height:4px;border-radius:50%;background:#e9ffff;box-shadow:0 0 18px 5px #8af5e4;animation:sc418Light 2s calc(var(--n)*.35s) both}
+.sc-arrival-lights i:nth-child(1){--n:0}.sc-arrival-lights i:nth-child(2){--n:1}.sc-arrival-lights i:nth-child(3){--n:2}.sc-arrival-lights i:nth-child(4){--n:3}.sc-arrival-lights i:nth-child(5){--n:4}
+.sc-film[data-ending="NEW_EARTH"] .arrival>img{animation:sc418Approach 5.5s ease-out both}
+.sc-film[data-ending="NEW_EARTH"] .renewal .sc-atmosphere{background:radial-gradient(ellipse at 74% 20%,#ffe4a466,transparent 65%);animation:sc418Title 4s both}
+.sc-film[data-ending="NEW_EARTH"] .renewal .sc-arrival-lights{display:block}
+.sc-film[data-ending="MISSION_FAILED"] .sc-image>img{animation:sc418PowerDown 6s ease-out both}
+.sc-film[data-ending="MISSION_FAILED"] .sc-caption h2{animation:sc418Title 1s 5s both}
+.sc-film[data-ending="MISSION_FAILED"] .sc-atmosphere{background:radial-gradient(ellipse at 18% 80%,#b3602220,transparent 22%),linear-gradient(90deg,#0007,transparent 50%,#0009);animation:sc418Title 5s both}
+.sc-film[data-ending="OLD_EARTH"] .home>img{animation:sc418Earth 4s ease-out both}
+.sc-film[data-ending="OLD_EARTH"][data-effect="home"] .sc-caption h2{animation:sc418Title 1s .8s both}
+.sc-film[data-ending="OLD_EARTH"] .home .sc-atmosphere{background:radial-gradient(ellipse at 70% 30%,#e8d2a530,transparent 65%);animation:sc418Title 4s both}
+.sc-film[data-ending="ALIEN_FIRST_CONTACT"] .sc-atmosphere{background:repeating-radial-gradient(ellipse at 50% 55%,transparent 0 55px,#a578ff45 57px,transparent 60px 100px);animation:sc418Alien 6s ease-out both;mix-blend-mode:screen}
+.sc-film[data-ending="ALIEN_FIRST_CONTACT"] .sc-arrival-lights{display:block;filter:hue-rotate(100deg)}
+.sc-film[data-ending="ALIEN_FIRST_CONTACT"] .sc-arrival-lights i{width:25px;height:5px;box-shadow:0 0 24px 8px #ba82ff;bottom:calc(30% + var(--n)*8%);transform:rotate(-18deg)}
+@keyframes sc418Approach{from{transform:scale(1);filter:brightness(.7) saturate(.75)}to{transform:scale(1.10);filter:brightness(1.1) saturate(1.05)}}
+@keyframes sc418PowerDown{0%{filter:brightness(.8)}30%{filter:brightness(.5)}65%{filter:brightness(.25) saturate(.4)}100%{filter:brightness(.1) saturate(.2)}}
+@keyframes sc418Earth{from{transform:scale(1.07);filter:brightness(.05)}45%{filter:brightness(.65)}to{transform:scale(1);filter:brightness(1.08)}}
+@keyframes sc418Title{from{opacity:0}to{opacity:1}}
+@keyframes sc418Light{from{opacity:0;scale:.4}to{opacity:1;scale:1}}
+@keyframes sc418Alien{from{opacity:0;transform:scale(.85) rotate(-4deg)}to{opacity:.75;transform:scale(1.15) rotate(3deg)}}
+@media(prefers-reduced-motion:reduce){.sc-film *{animation:none!important}.sc-film .sc-image>img{filter:none!important}}
+@media(max-width:800px){.sc-caption .sc-skip{grid-column:1;grid-row:auto;justify-self:start}.signal-readout{font-size:18px!important}}
+
+.sc-film.is-summary .sc-caption h2{animation:none!important}
+
+/* V41.10 — approved mineral choice layout, scoped to the actual report overlay. */
+.habitability-failure-card .action-stack{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:16px!important;align-items:stretch!important}
+.habitability-failure-card .action-stack :is(#resourceCheck,#departPlanet){display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;gap:10px!important;width:100%!important;max-width:none!important;min-width:0!important;min-height:170px!important;height:auto!important;padding:18px!important;text-align:left!important;white-space:normal!important}
+.habitability-failure-card .action-stack button :is(span,strong,small){position:static!important;font-size:18px!important;line-height:1.4!important;margin:0!important;white-space:normal!important}
+@media(max-width:650px){.habitability-failure-card .action-stack{grid-template-columns:1fr!important}.habitability-failure-card .action-stack button{min-height:120px!important}}
+#secondChanceFilm .sc-caption .sound410{grid-column:2;grid-row:auto;justify-self:end;min-height:42px;font-size:16px!important;padding:8px 14px!important}
+/* V41.11: reserve recovery fits within the scene, not behind the top HUD. */
+#simpleScene .central-action-dock.recovery-dock{top:12px!important;bottom:auto!important;left:50%!important;width:min(1000px,94%)!important;transform:translateX(-50%)!important;padding:8px!important;height:auto!important;max-height:none!important}
+#simpleScene .recovery-dock::before,#simpleScene.recovery-visible411 .critical-system-readout,#simpleScene .recovery-dock .routine-disabled411{display:none!important}
+#simpleScene .recovery-dock .recovery-panel{padding:10px!important;margin:0!important}
+#simpleScene .recovery-dock .recovery-alert{display:none!important}
+#simpleScene .recovery-dock .recovery-panel h3{margin:0 0 6px!important;font-size:20px!important}
+#simpleScene .recovery-dock .recovery-panel>p{display:block!important;font-size:16px!important;line-height:1.35!important;margin:0 0 8px!important}
+#simpleScene .recovery-dock .crisis-choice-grid{gap:8px!important}
+#simpleScene .recovery-dock .recovery-options{gap:8px!important}
+#simpleScene .recovery-dock .recovery-option{padding:10px!important;min-height:82px!important;line-height:1.35!important}
+#simpleScene .recovery-dock .recovery-option :is(b,span){position:static!important;font-size:16px!important;line-height:1.35!important;white-space:normal!important}
+#simpleScene .recovery-dock .expedition-panel{padding:8px!important;margin-top:0!important}
+#simpleScene .recovery-dock .expedition-panel>p{display:block!important;margin:4px 0 8px!important;font-size:16px!important;line-height:1.35!important}
+#simpleScene .recovery-dock .expedition-crew{gap:8px!important}
+#simpleScene .recovery-dock .expedition-crew button{padding:8px!important;line-height:1.35!important;font-size:16px!important}
+
+/* Reduce duplicate instructional headings, retain the actual instruction. */
+.objective-how>b:first-child{display:none!important}
+/* Concise text creates room for explicit, non-overlapping rows. */
+#simpleScene .recovery-dock .recovery-panel{display:grid!important;gap:12px!important;padding:14px!important}
+#simpleScene .recovery-dock .recovery-panel>h3,#simpleScene .recovery-dock .recovery-panel>p{margin:0!important}
+#simpleScene .recovery-dock .crisis-choice-grid{gap:12px!important}
+#simpleScene .recovery-dock .recovery-options{display:grid!important;grid-column:1/-1!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important}
+#simpleScene .recovery-dock .recovery-option{display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:flex-start!important;gap:10px!important;height:auto!important;min-height:90px!important;padding:12px!important}
+#simpleScene .recovery-dock .recovery-option>*{float:none!important;max-width:100%!important;margin:0!important}
+#simpleScene .recovery-dock .expedition-panel{display:grid!important;gap:8px!important;padding:12px!important}
+#simpleScene .recovery-dock .expedition-panel :is(h3,p){margin:0!important}
+#simpleScene .recovery-dock .expedition-crew{gap:12px!important}
+#simpleScene .recovery-dock .expedition-crew button{height:auto!important;padding:10px!important}
+@media(max-width:700px){#simpleScene .recovery-dock .recovery-options{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
