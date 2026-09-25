@@ -1,1 +1,0 @@
-V41.12: inherited V41.11 fixes plus concise UI copy. Inline/external JS syntax and ZIP integrity validated. Browser visual/audio playthrough not completed.
